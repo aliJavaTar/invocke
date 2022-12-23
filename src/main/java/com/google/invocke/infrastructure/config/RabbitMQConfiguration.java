@@ -1,6 +1,5 @@
-package com.google.invocke.infrastructure;
+package com.google.invocke.infrastructure.config;
 
-import com.rabbitmq.client.impl.AMQImpl;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
@@ -11,13 +10,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfiguration {
-    @Value("google.queue")
+    @Value("${javaInuse.rabbitmq.queue}")
     private String queueName;
 
-    @Value("google.exchange")
+    @Value("${javaInuse.rabbitmq.exchange}")
     private String exchange;
 
-    @Value("google.routingkey")
+    @Value("${javaInuse.rabbitmq.routingKey}")
     private String routingKey;
 
     @Bean
